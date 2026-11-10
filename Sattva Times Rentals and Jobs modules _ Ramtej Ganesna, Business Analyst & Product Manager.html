@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Ramtej Ganesna — Business Analyst and Product Manager case study for Sattva Times, a hyperlocal community and marketplace platform.">
+<title>Sattva Times Rentals and Jobs modules | Ramtej Ganesna, Business Analyst & Product Manager</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,500;6..72,600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#F2F4F3;--surf:#fff;--ink:#172522;--mut:#5D6B66;--line:#D6DEDA;--acc:#176B5B;--acc2:#E2F0EB;--warn:#A66B16;--warnbg:#FBF3E5;--bar:#176B5B;--shadow:0 8px 30px #163a2b0b;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#121a18;--surf:#1b2622;--ink:#e8efeb;--mut:#a1b0a8;--line:#33433c;--acc:#72c9ac;--acc2:#203a31;--warn:#e3b56a;--warnbg:#382d1d;--bar:#72c9ac;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#121a18;--surf:#1b2622;--ink:#e8efeb;--mut:#a1b0a8;--line:#33433c;--acc:#72c9ac;--acc2:#203a31;--warn:#e3b56a;--warnbg:#382d1d;--bar:#72c9ac;color-scheme:dark}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:18px}
+body{margin:0;background:var(--bg);color:var(--ink);font:15.5px/1.68 "DM Sans",system-ui,sans-serif}
+main{max-width:920px;margin:0 auto;padding:42px 22px 82px}
+h1,h2,h3{font-family:"Newsreader",Georgia,serif;font-weight:600;line-height:1.14;margin:0}
+h1{font-size:clamp(2.25rem,6vw,3.65rem);letter-spacing:-.035em;margin:13px 0 15px;max-width:800px}
+h2{font-size:clamp(1.7rem,4vw,2.15rem);margin:58px 0 13px;padding-top:23px;border-top:1px solid var(--line);letter-spacing:-.02em}
+h3{font-size:1.27rem;margin:27px 0 9px}
+h4{margin:0 0 8px;font-size:.95rem}
+p{margin:0 0 13px;max-width:75ch}
+ul,ol{padding-left:22px;margin:8px 0 14px}li{margin:4px 0}
+.lead{font-size:1.17rem;color:var(--mut);max-width:72ch}
+.meta{color:var(--mut);font-size:.88rem;margin-top:16px}
+.eyebrow{font:500 .73rem "DM Mono",monospace;letter-spacing:.13em;text-transform:uppercase;color:var(--acc)}
+.note{border-left:3px solid var(--warn);padding:11px 15px;background:var(--surf);color:var(--mut);font-size:.9rem;margin:20px 0;border-radius:0 8px 8px 0}
+.note strong{color:var(--ink)}
+.pill{display:inline-block;padding:3px 9px;border:1px solid var(--acc);color:var(--acc);margin:2px 4px 2px 0;font:500 .72rem "DM Mono",monospace;border-radius:30px}
+.pill.warn{border-color:var(--warn);color:var(--warn)}
+table{border-collapse:collapse;width:100%;font-size:.9rem;background:var(--surf)}
+th,td{border:1px solid var(--line);padding:9px 11px;text-align:left;vertical-align:top}
+th{font-weight:700;background:color-mix(in srgb,var(--line) 42%,var(--surf))}
+.scroll{overflow-x:auto;border-radius:8px;margin:12px 0 17px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:13px}
+.three{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+@media(max-width:650px){.two,.three{grid-template-columns:1fr}main{padding:28px 16px 60px}}
+.box{background:var(--surf);border:1px solid var(--line);padding:15px 16px;border-radius:9px;box-shadow:var(--shadow)}
+.box ol{margin:7px 0 0;padding-left:20px}.box li{margin-bottom:6px}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(145px,1fr));gap:10px;margin:16px 0}
+.kpi{background:var(--surf);border:1px solid var(--line);padding:13px 14px;border-radius:8px}
+.kpi b{display:block;font:600 1.4rem "Newsreader",Georgia,serif;color:var(--acc)}
+.kpi span{color:var(--mut);font-size:.8rem}
+.workflow{background:var(--surf);border:1px solid var(--line);padding:16px;border-radius:10px;margin:12px 0 18px}
+.flowrow{display:flex;align-items:center;gap:7px;flex-wrap:wrap}
+.step{border:1px solid var(--line);background:var(--bg);padding:9px 11px;border-radius:7px;font-size:.84rem;flex:1 1 125px;text-align:center}
+.arrow{color:var(--acc);font-weight:700}
+.wf{background:var(--surf);border:1px dashed var(--mut);padding:15px;border-radius:9px;margin:11px 0}
+.wfhead{display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap;border-bottom:1px solid var(--line);padding-bottom:10px;margin-bottom:12px}
+.wfnav{display:flex;gap:5px;flex-wrap:wrap}.wfnav span{padding:4px 8px;border:1px solid var(--line);font-size:.75rem;color:var(--mut);border-radius:5px}.wfnav .on{border-color:var(--acc);color:var(--acc);background:var(--acc2)}
+.formgrid{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+@media(max-width:520px){.formgrid{grid-template-columns:1fr}}
+.field{border:1px solid var(--line);padding:8px 10px;border-radius:5px;color:var(--mut);font-size:.82rem;min-height:47px}
+.field i{display:block;font-style:normal;font-size:.7rem;color:var(--ink);font-weight:700;margin-bottom:2px}
+.action{display:inline-block;padding:7px 13px;margin:10px 7px 0 0;background:var(--acc);color:white;border-radius:5px;font-size:.82rem;font-weight:700}
+.action.alt{background:var(--surf);color:var(--ink);border:1px solid var(--line)}
+.ann{color:var(--warn);font-size:.76rem;margin-top:9px}
+.story{background:var(--surf);border:1px solid var(--line);border-radius:9px;padding:15px 16px;margin:12px 0}
+.story b{color:var(--acc)}
+.story li{font-size:.9rem;color:var(--mut)}
+.code{background:var(--surf);border:1px solid var(--line);padding:12px 14px;overflow-x:auto;font:12.5px/1.55 "DM Mono",monospace;border-radius:8px;margin:9px 0 15px;white-space:pre}
+.metric{background:var(--acc2);padding:12px 14px;border-radius:8px}
+.metric strong{display:block;color:var(--acc);font:600 1.15rem "Newsreader",serif}
+.metric span{font-size:.8rem;color:var(--mut)}
+a{color:var(--acc);text-decoration-thickness:1px;text-underline-offset:3px}
+.topline{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:34px}
+.topline .brand{font:500 .74rem "DM Mono",monospace;letter-spacing:.12em}
+.topline button{border:1px solid var(--line);background:var(--surf);color:var(--ink);border-radius:6px;padding:7px 10px;font:inherit;font-size:.78rem}
+footer{border-top:1px solid var(--line);margin-top:60px;padding-top:20px;color:var(--mut);font-size:.82rem}
+@media print{body{background:#fff;color:#111}main{max-width:none;padding:15px}.topline button{display:none}h2{break-after:avoid}.box,.story,.wf{break-inside:avoid}}
+html{scroll-padding-top:64px}
+nav.toc{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;display:flex;gap:6px;overflow-x:auto;padding:9px 0;margin:0 0 22px;background:var(--bg);border-bottom:1px solid var(--line);scrollbar-width:none}
+nav.toc::-webkit-scrollbar{display:none}
+nav.toc a{flex:none;white-space:nowrap;text-decoration:none;color:var(--mut);border:1px solid var(--line);border-radius:30px;padding:5px 12px;font-size:.8rem;background:var(--surf)}
+nav.toc a:hover{color:var(--acc);border-color:var(--acc)}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--bg);z-index:10}
+.topline .brand{white-space:nowrap}.topline button{white-space:nowrap;flex:none}
+@media(max-width:520px){.topline{margin-bottom:24px}.topline .brand{font-size:.64rem;letter-spacing:.06em}.topline button .lbl{display:none}}
+</style>
+</head>
+<body>
+<main>
+<div class="topline"><div class="brand">RAMTEJ GANESNA · CASE STUDY</div><button onclick="toggleTheme()" aria-label="Toggle colour theme"><span class="lbl">Theme </span>◐</button></div>
+
+<nav class="toc" aria-label="Contents"><a href="#product">Product</a><a href="#rentals">Rentals</a><a href="#requirements">Requirements</a><a href="#rtm">Traceability</a><a href="#jobs">Jobs &amp; Opportunities</a><a href="#risks">Risks</a></nav>
+<div class="eyebrow">Business Analyst · Product Manager · Portfolio</div>
+<h1>Sattva Times: Rentals and Jobs &amp; Opportunities, from need to testable requirement</h1>
+<p class="lead">Two modules of a hyperlocal community marketplace, worked through the way I work as a Business Analyst and Product Manager: who needs what, which rules apply, what goes in the backlog first, and how each story is tested.</p>
+<p class="meta">Prepared by Ramtej Ganesna · Hyderabad, India · <a href="mailto:ram64ganesna@gmail.com">ram64ganesna@gmail.com</a> · +91 9010926321 · <a href="https://www.linkedin.com/in/ramtej-ganesna-86294414a/" target="_blank" rel="noreferrer">LinkedIn</a></p>
+<div class="note"><strong>How to read this case study:</strong> The platform overview and rental workflow details come from Sattva Times reference material. The Jobs &amp; Opportunities module is written as a proposed analysis and is marked as such, until it is checked against the live product. The analysis, prioritisation examples, wireframes and acceptance criteria are portfolio artefacts. They should be treated as proposed or illustrative unless confirmed by project records. No unverified delivery metrics, approvals or release outcomes are claimed.</div>
+
+<div class="kpis"><a class="kpi" href="#rentals" style="text-decoration:none"><b>Module 1</b><span>Rentals: homestays, party halls, PGs, hotels</span></a><a class="kpi" href="#jobs" style="text-decoration:none"><b>Module 2</b><span>Jobs &amp; Opportunities: local hiring</span></a><a class="kpi" href="#risks" style="text-decoration:none"><b>Open items</b><span>Risks and what I would validate</span></a></div>
+<h2 id="product">The product</h2>
+<p>Sattva Times is a hyperlocal community and marketplace platform designed to connect local businesses, service providers and people in their communities. The available platform material describes a wider ecosystem that includes business discovery, vendor storefronts, deals, events, job listings, professional networking and service-specific sections.</p>
+<div class="three">
+<div class="box"><span class="pill">Discover</span><h3>Local businesses</h3><p>Business directory, local services and vendor presence to help users find relevant providers.</p></div>
+<div class="box"><span class="pill">Engage</span><h3>Community activity</h3><p>Deals, events, jobs and professional networking that support local participation.</p></div>
+<div class="box"><span class="pill">Connect</span><h3>Marketplace journeys</h3><p>Category-based listings and contact journeys that connect consumers with providers.</p></div>
+</div>
+
+<h2>The business problem</h2>
+<p>Local discovery often happens across multiple channels. A user may need to search social media, directories, messaging groups and personal referrals to compare providers. Vendors may not have a consistent way to present and update their offerings. Platform operations also need to maintain listing quality, manage approvals and protect user information.</p>
+<h3>What the product needs to make easier</h3>
+<div class="scroll"><table>
+<tr><th>Business need</th><th>User / operational challenge</th><th>Product response</th></tr>
+<tr><td>Local discovery</td><td>Relevant options can be difficult to find and compare.</td><td>Structured categories, location-aware discovery and listing details.</td></tr>
+<tr><td>Vendor visibility</td><td>Providers need a consistent digital presence.</td><td>Vendor profiles, storefronts and listing management.</td></tr>
+<tr><td>Community engagement</td><td>Local opportunities are spread across different channels.</td><td>Deals, events, jobs and professional networking areas.</td></tr>
+<tr><td>Platform trust</td><td>Incomplete or misleading information can reduce confidence.</td><td>Validation, moderation, role controls and complaint handling.</td></tr>
+</table></div>
+<h3>Product objectives</h3>
+<div class="kpis">
+<div class="kpi"><b>Discoverability</b><span>Help users find relevant local options.</span></div>
+<div class="kpi"><b>Vendor enablement</b><span>Give providers a structured way to manage listings.</span></div>
+<div class="kpi"><b>Trust & quality</b><span>Support review, validation and moderation.</span></div>
+<div class="kpi"><b>Engagement</b><span>Make community opportunities easier to explore.</span></div>
+</div>
+<p class="ann">These are product objectives, not measured outcomes. Baselines and targets should be set using verified platform analytics.</p>
+
+<h2>Who uses the platform</h2>
+<div class="scroll"><table>
+<tr><th>Stakeholder / user</th><th>What they need</th><th>Product / delivery involvement</th></tr>
+<tr><td>Founder / management</td><td>Business outcomes, product direction and priorities.</td><td>Confirms vision, scope, investment and key decisions.</td></tr>
+<tr><td>Product Manager</td><td>A clear roadmap and prioritised backlog.</td><td>Owns product priorities and acceptance decisions.</td></tr>
+<tr><td>Community user / customer</td><td>Relevant local information and a simple discovery journey.</td><td>Uses search, categories, details and contact journeys.</td></tr>
+<tr><td>Vendor / service provider</td><td>Visibility and a manageable business presence.</td><td>Creates, updates and manages listings.</td></tr>
+<tr><td>Admin / moderator</td><td>Content quality, safe platform operations and status control.</td><td>Reviews listings, banners, complaints and account activity.</td></tr>
+<tr><td>Design, engineering and QA</td><td>Clear requirements, edge cases and acceptance criteria.</td><td>Design, build, test and validate approved functionality.</td></tr>
+</table></div>
+
+<h2>Product management and analysis approach</h2>
+<p>The work described in Ramtej's profile spans product direction and business analysis: aligning product priorities, converting business needs into epics and user stories, maintaining a prioritised backlog, coordinating Agile ceremonies and clarifying success measures.</p>
+<div class="workflow">
+<div class="flowrow">
+<div class="step"><b>Understand</b><br>Business goals & user needs</div><div class="arrow">→</div>
+<div class="step"><b>Define</b><br>Requirements & acceptance</div><div class="arrow">→</div>
+<div class="step"><b>Prioritise</b><br>Value, effort & risk</div><div class="arrow">→</div>
+<div class="step"><b>Deliver</b><br>Team coordination</div><div class="arrow">→</div>
+<div class="step"><b>Validate</b><br>Testing & feedback</div>
+</div>
+</div>
+<div class="two">
+<div class="box"><h3>Product Manager lens</h3><ul><li>Product vision and roadmap alignment</li><li>Backlog ownership and refinement</li><li>MoSCoW and value-based prioritisation</li><li>Sprint goals and acceptance</li><li>Success measures and feedback loops</li></ul></div>
+<div class="box"><h3>Business Analyst lens</h3><ul><li>Stakeholder elicitation and clarification</li><li>BRD / FRD and business rules</li><li>Epics, stories and Gherkin criteria</li><li>Process flows and gap analysis</li><li>RTM, UAT and change control</li></ul></div>
+</div>
+
+<h2 id="rentals">Module 1 deep dive: Rentals</h2>
+<p>The Rental Module is the detailed case study within the wider Sattva Times platform. Available reference documents describe rental and stay-related categories including rentals, hotels, paying guests, homestays, party halls and KalyanaMandapams. The intended journey connects listing owners with customers looking for suitable properties or venues.</p>
+<div class="note"><strong>Scope note:</strong> Some supplied platform documents describe specific Homestay and Party Hall rules, including OTP verification, listing review, Sattva Points and banner promotions. Other details in this case study are proposed BA recommendations and are labelled accordingly. Confirm the exact live scope and current business rules before treating this as a production specification.</div>
+<h3>The user problem</h3>
+<ul>
+<li>Customers need to discover suitable accommodation or venues using relevant location and category information.</li>
+<li>Listing details such as price, capacity, amenities, images and availability need to be understandable.</li>
+<li>Owners need a place to submit and maintain property or venue information.</li>
+<li>Admins need to review listing quality and manage inaccurate or inappropriate content.</li>
+</ul>
+
+<h3>Rental user journey</h3>
+<div class="workflow">
+<div class="flowrow">
+<div class="step">Choose category</div><div class="arrow">→</div><div class="step">Search by location</div><div class="arrow">→</div><div class="step">Apply filters</div><div class="arrow">→</div><div class="step">Review listing</div><div class="arrow">→</div><div class="step">Contact / enquire</div>
+</div>
+<p class="ann">The exact contact or booking action depends on the approved category workflow.</p>
+</div>
+
+<h3>Scope and feature areas</h3>
+<div class="scroll"><table>
+<tr><th>Feature</th><th>Customer value</th><th>Owner / admin value</th></tr>
+<tr><td>Category discovery</td><td>Explore rentals, hotels, PGs, homestays, party halls and KalyanaMandapams.</td><td>List within an appropriate category.</td></tr>
+<tr><td>Search and filters</td><td>Find options by location and relevant attributes.</td><td>Improve listing discoverability.</td></tr>
+<tr><td>Listing details</td><td>Review images, address, pricing, capacity, amenities and rules.</td><td>Present structured information.</td></tr>
+<tr><td>Owner registration and dashboard</td><td>—</td><td>Submit and manage listings after required verification / approval.</td></tr>
+<tr><td>Admin review</td><td>More consistent listing quality.</td><td>Approve, reject or moderate according to policy.</td></tr>
+<tr><td>Sattva Points and promotions</td><td>Controlled access to selected contact details where configured.</td><td>Visibility and banner promotion options described in platform reference material.</td></tr>
+</table></div>
+
+<h2>Business rules that shape the experience</h2>
+<p>The following points are taken from the supplied Sattva Times functional overview and Rental Module presentation. They should be checked against the latest live configuration before publication as current rules.</p>
+<div class="scroll"><table>
+<tr><th>Area</th><th>Documented rule / condition</th></tr>
+<tr><td>Registration</td><td>Email must be valid and unique; mobile number verification uses OTP in the described flows.</td></tr>
+<tr><td>Vendor listing</td><td>Category-specific property or venue details and at least one image are required in the described Homestay / Party Hall flows.</td></tr>
+<tr><td>Admin review</td><td>Vendor listing approval is required before the vendor dashboard or public listing access in the described flows.</td></tr>
+<tr><td>Customer access</td><td>Registration / login is required for detailed search and selected contact or save actions in the described flows.</td></tr>
+<tr><td>Sattva Points</td><td>Customers use points to unlock vendor contact details; vendors can use points for visibility or promotions, as described in the reference.</td></tr>
+<tr><td>Banner promotion</td><td>Vendor banners require an image, placement and duration details, and admin approval before appearing.</td></tr>
+<tr><td>Admin controls</td><td>Admins can review registrations, moderate banners and listings, monitor complaints and suspend or delete accounts for policy violations.</td></tr>
+</table></div>
+
+<h2 id="requirements">Requirements</h2>
+<p>The following high-level business requirements translate the product needs into a manageable scope. IDs are proposed for this portfolio and are not represented as official system IDs.</p>
+<div class="scroll"><table>
+<tr><th>ID</th><th>Business requirement</th><th>Priority</th></tr>
+<tr><td>BR-01</td><td>Users can discover listings by supported rental category.</td><td><span class="pill">Must</span></td></tr>
+<tr><td>BR-02</td><td>Users can search and filter listings by relevant criteria.</td><td><span class="pill">Must</span></td></tr>
+<tr><td>BR-03</td><td>Users can view structured listing details and images.</td><td><span class="pill">Must</span></td></tr>
+<tr><td>BR-04</td><td>Owners can register and submit listing information.</td><td><span class="pill">Must</span></td></tr>
+<tr><td>BR-05</td><td>Owners can view and manage their own listings within permitted actions.</td><td><span class="pill">Must</span></td></tr>
+<tr><td>BR-06</td><td>Customers can contact or enquire about eligible listings through the approved journey.</td><td><span class="pill">Must</span></td></tr>
+<tr><td>BR-07</td><td>Admins can review and manage listing status and quality.</td><td><span class="pill">Must</span></td></tr>
+<tr><td>BR-08</td><td>The platform applies role-based access and protects private information.</td><td><span class="pill">Must</span></td></tr>
+<tr><td>BR-09</td><td>Where enabled, Sattva Points and banner promotions follow approved rules.</td><td><span class="pill">Should</span></td></tr>
+<tr><td>BR-10</td><td>Product teams can assess listing and discovery performance through agreed metrics.</td><td><span class="pill">Should</span></td></tr>
+</table></div>
+
+<h3>Functional and non-functional considerations</h3>
+<div class="two">
+<div class="box"><h4>Functional</h4><ul><li>Category selection and search</li><li>Filter and listing detail display</li><li>Owner registration and listing submission</li><li>Listing edit and status visibility</li><li>Admin review and moderation</li><li>Contact / enquiry action where in scope</li></ul></div>
+<div class="box"><h4>Non-functional</h4><ul><li>Role-based security and privacy</li><li>Responsive mobile and desktop experience</li><li>Clear validation and error messages</li><li>Reliable search and listing retrieval</li><li>Auditability of administrative changes</li><li>Accessibility and usable form design</li></ul></div>
+</div>
+
+<h2>One user story, in detail</h2>
+<div class="story"><b>US-04: Submit a rental listing.</b><br>As a property owner, I want to submit my property or venue details so that customers can discover my listing on Sattva Times.
+<ul>
+<li><i>Given</i> I am an authenticated owner, <i>when</i> I complete all mandatory fields and submit, <i>then</i> the system saves the listing with the correct initial status.</li>
+<li><i>Given</i> a mandatory field is missing, <i>when</i> I submit, <i>then</i> the system highlights the missing information and does not submit the listing.</li>
+<li><i>Given</i> I upload an unsupported image format, <i>when</i> I submit, <i>then</i> the system displays a clear validation message.</li>
+<li><i>Given</i> the listing is awaiting review, <i>when</i> I open my dashboard, <i>then</i> I can see its current status and any required action.</li>
+</ul></div>
+
+<h2>Process: current challenge and proposed flow</h2>
+<div class="two">
+<div class="box"><b>Fragmented discovery — problem hypothesis</b><ol><li>User searches different channels for a property or venue.</li><li>Information is presented in inconsistent formats.</li><li>User manually compares location, price and amenities.</li><li>User tries to contact the owner through available channels.</li><li>Listing quality and response experience can vary.</li></ol><p class="ann">This describes the problem hypothesis, not a measured current-state process map.</p></div>
+<div class="box"><b>Structured marketplace journey — proposed</b><ol><li>User selects a rental category and location.</li><li>Search returns relevant listings and filters.</li><li>User reviews consistent listing details.</li><li>User follows the approved contact / enquiry journey.</li><li>Owner manages listing information; admin reviews quality where required.</li></ol></div>
+</div>
+
+<h2>Wireframes: key screens</h2>
+<p>These are low-fidelity portfolio wireframes to communicate the information architecture and required fields. They are not screenshots of the production application.</p>
+<h3>1. Owner listing submission</h3>
+<div class="wf">
+<div class="wfhead"><b>New rental listing</b><div class="wfnav"><span class="on">1 Details</span><span>2 Location</span><span>3 Photos</span><span>4 Review</span></div></div>
+<div class="formgrid">
+<div class="field"><i>Listing category *</i>Choose: Homestay / Party Hall / PG / Hotel</div>
+<div class="field"><i>Property / venue name *</i>Enter listing name</div>
+<div class="field"><i>Owner / business name *</i>Enter registered name</div>
+<div class="field"><i>Mobile number *</i>OTP verification, where required</div>
+<div class="field"><i>City / area *</i>Enter location</div>
+<div class="field"><i>Price / rental range</i>Enter amount and pricing unit</div>
+<div class="field"><i>Capacity / occupancy</i>Category-specific value</div>
+<div class="field"><i>Amenities / facilities</i>Select relevant options</div>
+</div>
+<span class="action alt">Save draft</span><span class="action">Continue</span>
+<div class="ann">Required fields, pricing units and category-specific fields must be confirmed with the product manager.</div>
+</div>
+
+<h3>2. Customer search results</h3>
+<div class="wf">
+<div class="wfhead"><b>Find a place</b><span class="pill">Customer view</span></div>
+<div class="formgrid">
+<div class="field"><i>Category</i>Homestay ▾</div><div class="field"><i>Location</i>City / area / pincode</div>
+<div class="field"><i>Price range</i>Minimum — Maximum</div><div class="field"><i>Capacity / amenities</i>Choose filters</div>
+</div>
+<div class="box" style="margin-top:10px"><b>Listing result card</b><div class="formgrid" style="margin-top:8px"><div class="field"><i>Property image</i>[Image placeholder]</div><div class="field"><i>Listing name</i>Property / venue name<br>Location · Price · Key amenities<br><span class="pill">View details</span></div></div></div>
+<div class="ann">Illustrative layout only. Search ranking and visibility rules follow approved platform configuration.</div>
+</div>
+
+<h3>3. Admin review queue</h3>
+<div class="wf">
+<div class="wfhead"><b>Listing review</b><span class="pill warn">Admin view</span></div>
+<div class="formgrid">
+<div class="field"><i>Listing reference</i>Generated listing ID</div><div class="field"><i>Submitted by</i>Owner / listing manager</div>
+<div class="field"><i>Category</i>Selected category</div><div class="field"><i>Review status</i>Pending review</div>
+<div class="field"><i>Completeness check</i>Required fields and images</div><div class="field"><i>Moderation check</i>Policy and content review</div>
+</div>
+<span class="action">Approve</span><span class="action alt">Request changes</span><span class="action alt">Reject</span>
+<div class="ann">Admin actions and reason capture should follow the approved moderation policy.</div>
+</div>
+
+<h2>Product backlog and prioritisation</h2>
+<p>MoSCoW is used here as an illustrative prioritisation method. Final sequencing should consider business value, user impact, dependencies, delivery effort and risk.</p>
+<div class="scroll"><table>
+<tr><th>Backlog item</th><th>Priority</th><th>Reason / dependency</th></tr>
+<tr><td>Rental category selection</td><td><span class="pill">Must</span></td><td>Foundation for category-specific discovery and forms.</td></tr>
+<tr><td>Location-based search</td><td><span class="pill">Must</span></td><td>Core customer discovery journey; depends on accurate listing locations.</td></tr>
+<tr><td>Listing details page</td><td><span class="pill">Must</span></td><td>Enables users to assess an option.</td></tr>
+<tr><td>Owner listing submission</td><td><span class="pill">Must</span></td><td>Creates marketplace supply.</td></tr>
+<tr><td>Owner listing management</td><td><span class="pill">Must</span></td><td>Supports ongoing data maintenance.</td></tr>
+<tr><td>Admin review and status</td><td><span class="pill">Must</span></td><td>Supports platform quality and publication controls.</td></tr>
+<tr><td>Enquiry workflow</td><td><span class="pill">Should</span></td><td>Depends on approved customer contact process.</td></tr>
+<tr><td>Advanced reporting</td><td><span class="pill">Could</span></td><td>Requires event tracking and agreed KPI definitions.</td></tr>
+</table></div>
+
+<h3>Illustrative sprint sequence</h3>
+<div class="scroll"><table>
+<tr><th>Sprint</th><th>Focus</th><th>Potential outcome</th></tr>
+<tr><td>1</td><td>Discovery and definition</td><td>Confirmed scope, user journeys, category fields and reviewed wireframes.</td></tr>
+<tr><td>2</td><td>Search and listing discovery</td><td>Category selection, search, filters and listing details.</td></tr>
+<tr><td>3</td><td>Owner listing management</td><td>Owner submission, validations and permitted edits.</td></tr>
+<tr><td>4</td><td>Admin review and validation</td><td>Review workflow, integration testing and UAT readiness.</td></tr>
+</table></div>
+<p class="ann">This is a sample planning sequence, not a claim about the actual sprint dates or completed releases.</p>
+
+<h2>Product metrics and success measures</h2>
+<p>To understand whether the product is solving the discovery and vendor-management problems, I would define a small set of measurable indicators with clear event definitions and owners.</p>
+<div class="scroll"><table>
+<tr><th>Metric</th><th>Definition</th><th>Product question</th></tr>
+<tr><td>Active approved listings</td><td>Count of listings in approved active status during a period.</td><td>Is marketplace supply growing?</td></tr>
+<tr><td>Listing completeness</td><td>Listings with all required fields ÷ submitted listings.</td><td>Are owners providing enough information?</td></tr>
+<tr><td>Search-to-detail rate</td><td>Listing detail views ÷ search result impressions.</td><td>Are results relevant to users?</td></tr>
+<tr><td>Search-to-enquiry rate</td><td>Eligible enquiries ÷ search sessions.</td><td>Are users finding options worth contacting?</td></tr>
+<tr><td>Review turnaround time</td><td>Time from submission to admin decision.</td><td>Are listings reviewed efficiently?</td></tr>
+<tr><td>Vendor response time</td><td>Time from enquiry to first vendor response.</td><td>Are users receiving timely follow-up?</td></tr>
+</table></div>
+<div class="note"><strong>Measurement discipline:</strong> No actual Sattva Times KPI values or improvements are asserted here. Establish baselines from verified analytics before setting targets or reporting impact.</div>
+
+<h2 id="rtm">RTM and UAT</h2>
+<p>Traceability connects a business need to a functional requirement, a user story and a test scenario. The sample mapping below shows how this can be maintained through delivery.</p>
+<div class="scroll"><table>
+<tr><th>Business requirement</th><th>Functional requirement</th><th>User story</th><th>UAT</th></tr>
+<tr><td>BR-01 Category discovery</td><td>FR-01 Category selection</td><td>US-01 Search by category</td><td>UAT-01 Choose supported category</td></tr>
+<tr><td>BR-02 Search and filters</td><td>FR-02 Search / FR-03 Filters</td><td>US-02 Apply filters</td><td>UAT-02 Search and filter results</td></tr>
+<tr><td>BR-03 Listing details</td><td>FR-04 Listing details</td><td>US-03 Review listing</td><td>UAT-03 Validate detail information</td></tr>
+<tr><td>BR-04 Owner submission</td><td>FR-05 Authentication / FR-06 Create</td><td>US-04 Submit listing</td><td>UAT-04 Submit valid listing</td></tr>
+<tr><td>BR-05 Listing management</td><td>FR-07 Edit listing</td><td>US-05 Edit own listing</td><td>UAT-05 Validate owner permissions</td></tr>
+<tr><td>BR-06 Customer enquiry</td><td>FR-09 Contact / enquiry action</td><td>US-07 Enquire about a listing</td><td>UAT-09 Submit an enquiry on an eligible listing</td></tr>
+<tr><td>BR-07 Admin review</td><td>FR-08 Review workflow</td><td>US-06 Review listing</td><td>UAT-06 Approve / reject / request changes</td></tr>
+<tr><td>BR-08 Role-based access and privacy</td><td>FR-10 Role permissions</td><td>US-08 Access only permitted data</td><td>UAT-05 / UAT-08 Access checks</td></tr>
+<tr><td>BR-09 Sattva Points and banners</td><td>FR-11 Points rules / FR-12 Banner approval</td><td>US-09 Promote a listing</td><td>UAT-10 Banner needs admin approval</td></tr>
+<tr><td>BR-10 Performance insight</td><td>FR-13 Event tracking</td><td>US-10 View listing performance</td><td>UAT-11 Events recorded and reported</td></tr>
+</table></div>
+
+<h3>Sample UAT scenarios</h3>
+<div class="scroll"><table>
+<tr><th>ID</th><th>Scenario</th><th>Expected result</th></tr>
+<tr><td>UAT-01</td><td>Select a supported rental category.</td><td>Correct category options and relevant journey are displayed.</td></tr>
+<tr><td>UAT-02</td><td>Search by location and apply filters.</td><td>Results match all active filter criteria.</td></tr>
+<tr><td>UAT-03</td><td>Open an approved listing.</td><td>Approved listing information is displayed accurately.</td></tr>
+<tr><td>UAT-04</td><td>Submit an owner listing with mandatory fields complete.</td><td>Listing is saved and correct status is shown.</td></tr>
+<tr><td>UAT-05</td><td>Owner attempts to edit another owner's listing.</td><td>Unauthorised access is blocked.</td></tr>
+<tr><td>UAT-06</td><td>Admin reviews a pending listing and requests changes.</td><td>Status and reason are recorded according to policy.</td></tr>
+<tr><td>UAT-07</td><td>Submit listing with mandatory fields missing.</td><td>Field-level validation appears; invalid submission is prevented.</td></tr>
+<tr><td>UAT-08</td><td>Open an inactive listing directly.</td><td>Access follows the approved publication and privacy policy.</td></tr>
+<tr><td>UAT-09</td><td>Customer enquires about an approved listing.</td><td>Enquiry follows the approved contact journey and is recorded.</td></tr>
+<tr><td>UAT-10</td><td>Vendor submits a banner for promotion.</td><td>Banner stays hidden until an admin approves it.</td></tr>
+<tr><td>UAT-11</td><td>Customer views a listing, then enquires.</td><td>Both events appear in the agreed reporting source.</td></tr>
+</table></div>
+<p class="ann">Execution status: not run as part of this portfolio page. Record actual pass/fail, defect references and business sign-off only after UAT.</p>
+
+<h2 id="jobs">Module 2 deep dive: Jobs &amp; Opportunities</h2>
+<p>Sattva Times lists jobs among its community features. This module connects people looking for local work with businesses that are hiring, and gives the admin team control over what gets published.</p>
+<div class="note"><strong>Status:</strong> proposed analysis. Roles, fields and rules below are my working assumptions for the portfolio. Each one is on the validation list at the end.</div>
+<h3>Who it serves</h3>
+<div class="three">
+<div class="box"><span class="pill">Job seeker</span><p>Finds nearby openings, understands pay and requirements, applies or contacts the employer without a long form.</p></div>
+<div class="box"><span class="pill">Employer / vendor</span><p>Posts an opening, edits or closes it, and sees who responded.</p></div>
+<div class="box"><span class="pill warn">Admin / moderator</span><p>Checks posts for accuracy, removes misleading or duplicate listings, handles complaints.</p></div>
+</div>
+<h3>The problem</h3>
+<p>Small local employers usually hire through word of mouth, messaging groups and notice boards. Seekers cannot tell which openings are current, genuine or reachable. Employers get unstructured enquiries and no clear way to close a vacancy. The module should make an opening easy to post, easy to find, and easy to trust.</p>
+<h3>Proposed journey</h3>
+<div class="workflow"><div class="flowrow"><div class="step">Employer posts opening</div><span class="arrow">→</span><div class="step">Admin reviews</div><span class="arrow">→</span><div class="step">Listing goes live</div><span class="arrow">→</span><div class="step">Seeker searches and filters</div><span class="arrow">→</span><div class="step">Applies / contacts</div><span class="arrow">→</span><div class="step">Employer closes vacancy</div></div></div>
+<h3>Requirements</h3>
+<div class="scroll"><table>
+<tr><th>ID</th><th>Business requirement</th><th>Priority</th></tr>
+<tr><td>JO-01</td><td>Employers can create a job post with title, category, location, pay range, job type and description.</td><td>Must</td></tr>
+<tr><td>JO-02</td><td>Posts go through admin review before they are visible to seekers.</td><td>Must</td></tr>
+<tr><td>JO-03</td><td>Seekers can search by location and category, and filter by job type and pay.</td><td>Must</td></tr>
+<tr><td>JO-04</td><td>Seekers can view full job details and apply or contact through the approved route.</td><td>Must</td></tr>
+<tr><td>JO-05</td><td>Employers can edit, pause or close their own posts only.</td><td>Must</td></tr>
+<tr><td>JO-06</td><td>Posts expire after a set period unless renewed.</td><td>Should</td></tr>
+<tr><td>JO-07</td><td>Users can report a post; admins can action reports and record the reason.</td><td>Should</td></tr>
+<tr><td>JO-08</td><td>Seekers can save jobs and get alerts for new matches.</td><td>Could</td></tr>
+<tr><td>JO-09</td><td>Product team can see views, applications and closure rates per category.</td><td>Should</td></tr>
+</table></div>
+<h3>One user story, in detail</h3>
+<div class="story"><b>JO-US-01: Post a job opening.</b><br>As an employer, I want to post a vacancy with clear details so that nearby candidates can find and respond to it.
+<ul>
+<li><i>Given</i> I am a logged-in employer, <i>when</i> I fill all mandatory fields and submit, <i>then</i> the post is saved as "Pending review".</li>
+<li><i>Given</i> the pay range has a minimum higher than the maximum, <i>when</i> I submit, <i>then</i> the form flags the pay fields and does not save.</li>
+<li><i>Given</i> my post is rejected, <i>when</i> I open my dashboard, <i>then</i> I see the reason and can edit and resubmit.</li>
+<li><i>Given</i> my post is approved, <i>when</i> a seeker searches a matching location, <i>then</i> the post appears in the results.</li>
+</ul></div>
+<h3>Wireframes</h3>
+<div class="wf"><div class="wfhead"><b>Post a job</b><div class="wfnav"><span class="on">1 Role</span><span>2 Pay</span><span>3 Contact</span><span>4 Review</span></div></div>
+<div class="formgrid"><div class="field"><i>Job title *</i>e.g. Delivery executive</div><div class="field"><i>Category *</i>Choose category</div><div class="field"><i>Location *</i>City / area</div><div class="field"><i>Job type *</i>Full time / Part time / Contract</div><div class="field"><i>Pay range</i>Minimum to maximum, per month</div><div class="field"><i>Apply by</i>Closing date</div></div>
+<span class="action alt">Save draft</span><span class="action">Submit for review</span><div class="ann">Illustrative layout. Mandatory fields to be confirmed with the product manager.</div></div>
+<div class="wf"><div class="wfhead"><b>Find jobs near you</b><span class="pill">Seeker view</span></div>
+<div class="formgrid"><div class="field"><i>Location</i>City / area / pincode</div><div class="field"><i>Category</i>All categories ▾</div><div class="field"><i>Job type</i>Any</div><div class="field"><i>Pay</i>Minimum</div></div>
+<div class="box" style="margin-top:10px"><b>Job card</b><p style="margin:6px 0 0">Title · Employer · Area · Pay range · Posted date <span class="pill">View and apply</span></p></div><div class="ann">Low-fidelity only; not a production screenshot.</div></div>
+<h3>Backlog priority</h3>
+<div class="scroll"><table>
+<tr><th>Release</th><th>Items</th><th>Reason</th></tr>
+<tr><td>Release 1 (Must)</td><td>JO-01 to JO-05</td><td>Without posting, review, search and apply there is no working module.</td></tr>
+<tr><td>Release 2 (Should)</td><td>JO-06, JO-07, JO-09</td><td>Keeps listings fresh and trusted; gives the team data.</td></tr>
+<tr><td>Later (Could)</td><td>JO-08</td><td>Useful for retention, but not needed to prove the core value.</td></tr>
+</table></div>
+<h3>Success measures to track</h3>
+<div class="kpis"><div class="metric"><strong>Posts approved</strong><span>share of submissions passing first review</span></div><div class="metric"><strong>Search to apply</strong><span>seekers who apply after viewing a job</span></div><div class="metric"><strong>Time to approval</strong><span>submission to live</span></div><div class="metric"><strong>Closed vacancies</strong><span>posts closed by the employer, not expired</span></div></div>
+<p class="ann">Metrics are proposed. Baselines and targets need real platform analytics.</p>
+<h3>Traceability and test scenarios</h3>
+<div class="scroll"><table>
+<tr><th>Requirement</th><th>Story</th><th>UAT scenario</th><th>Expected result</th></tr>
+<tr><td>JO-01</td><td>JO-US-01</td><td>Submit with all mandatory fields</td><td>Saved as Pending review</td></tr>
+<tr><td>JO-01</td><td>JO-US-01</td><td>Pay minimum above maximum</td><td>Validation message; not saved</td></tr>
+<tr><td>JO-02</td><td>JO-US-02</td><td>Admin rejects with a reason</td><td>Employer sees reason; post stays hidden</td></tr>
+<tr><td>JO-03</td><td>JO-US-03</td><td>Search by area and job type</td><td>Only matching approved posts appear</td></tr>
+<tr><td>JO-05</td><td>JO-US-05</td><td>Employer edits another employer's post</td><td>Access blocked</td></tr>
+</table></div>
+<p class="ann">Not executed. Record results only after real UAT.</p>
+
+<h2 id="risks">Risks, dependencies and open decisions</h2>
+<div class="scroll"><table>
+<tr><th>Risk / dependency</th><th>Why it matters</th><th>Action</th></tr>
+<tr><td>Category-specific data is unclear</td><td>Forms and filters may not capture the right information.</td><td>Approve a category-wise field matrix.</td></tr>
+<tr><td>Enquiry versus booking scope</td><td>Customer expectations and downstream workflows differ.</td><td>Confirm the intended release journey.</td></tr>
+<tr><td>Pricing and availability rules</td><td>Incorrect display can mislead customers.</td><td>Agree units, update ownership and availability rules.</td></tr>
+<tr><td>Admin review capacity</td><td>Pending listings can delay vendor activation.</td><td>Confirm review roles and service expectations.</td></tr>
+<tr><td>Privacy and access control</td><td>Owner and customer data must be protected.</td><td>Validate role permissions and audit requirements.</td></tr>
+<tr><td>Job posts are not verified</td><td>Fake or outdated vacancies reduce seeker trust.</td><td>Define review checks, expiry and reporting rules.</td></tr>
+<tr><td>Analytics instrumentation</td><td>Metrics cannot be trusted without event definitions.</td><td>Agree event names, data source and reporting owner.</td></tr>
+</table></div>
+
+<h2>What I would validate with the product team</h2>
+<ol>
+<li>Which platform modules are currently live and which are planned?</li>
+<li>What are the exact roles and permissions across customers, vendors, admins and super admins?</li>
+<li>Which rental categories and mandatory fields are approved today?</li>
+<li>Does the rental journey support enquiries only, or booking and payment as well?</li>
+<li>What are the current Sattva Points rules, including free allocations, contact unlocks and vendor promotions?</li>
+<li>Which admin approvals are mandatory, and what are the rejection / resubmission rules?</li>
+<li>Which product analytics events and dashboards are currently available?</li>
+<li>Is Jobs &amp; Opportunities live, and who can post: any vendor, or verified businesses only?</li>
+<li>Do seekers apply inside the platform, or contact the employer directly?</li>
+<li>Which project artefacts, screenshots and outcomes can be shared publicly?</li>
+</ol>
+
+<h2>Reflection</h2>
+<p>This case study demonstrates how I approach product management and business analysis together: understand the broader business ecosystem, identify user and operational needs, turn those needs into structured requirements, prioritise the work, and connect delivery back to testable acceptance criteria and measurable outcomes.</p>
+<p>The most important next step is stakeholder validation. A strong product specification is not just a detailed document; it is a shared understanding between the business, users and delivery team.</p>
+
+<div class="note"><strong>Portfolio integrity:</strong> This page is intended for recruitment discussion. Any statement about Ramtej's personal contribution, employment dates, sprint ownership or delivered functionality should be checked against his actual project experience before it is published. Do not include confidential data or internal screenshots without permission.</div>
+
+<footer>
+<p><strong>Ramtej Ganesna</strong> · Business Analyst & Product Manager</p>
+<p>Hyderabad, India · <a href="mailto:ram64ganesna@gmail.com">ram64ganesna@gmail.com</a> · +91 9010926321 · <a href="https://www.linkedin.com/in/ramtej-ganesna-86294414a/" target="_blank" rel="noreferrer">LinkedIn</a></p>
+<p>© 2026 Ramtej Ganesna · Sattva Times Rentals and Jobs product case study</p>
+</footer>
+</main>
+<script>
+function toggleTheme(){const r=document.documentElement;const d=r.getAttribute('data-theme');r.setAttribute('data-theme',d==='dark'?'light':'dark');}
+</script>
+</body></html>
